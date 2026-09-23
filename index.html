@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><!--AQUI VIENE LOS METADATOS Y LA CONEXIÓN al style.css-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Cesar Chavez">
+  <meta name="description" content="Es un diseño de carrito de compras para un taller">
+  <meta name="keywords" content="taller,mecanica,piezas,">
+  <!--Es el titulo de la Pagina web -->
+  <title>Carrito de Compras Mecanica</title>
+  <!--Enlaza con la hoja de estilo-->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+ 
+<header class="site-header"> 
+  <div class="container header-inner">
+    <a href="#inicio" class="logo">
+    <img src="img/log.jpg" alt="Logo de la empresa MECANICA">
+      <!--<span class="logo-icon">⚡️</span>-->
+      MECANICA
+    </a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#beneficios">Beneficios</a></li>
+        <li><a href="#oferta">Oferta</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <button type="button" class="btn primary" onclick="openWhatsApp('Hola, quiero hacer un pedido en Dulce Detalle.')">
+        <i data-lucide="message-circle"></i> Pedir ahora
+      </button>
+    </nav>
+    <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">☰</button>
+  </div>
+  
+  <nav id="mobile-menu" class="mobile-nav">
+
+
+  <div>
+    <a class="logo" href="#">
+      <!-- Imagen utilizada como logo -->
+      <img src="" alt="Logo">
+    </a>
+    <span data-template-id="brand-name" class="canva-text title-font text-lg font-bold" style="color: rgb(63, 48, 42); font-weight: 700; font-style: normal; font-size: 16px;">TechIY</span>
+    <a href="#" class="brand-name-link"></a>
+  </div>
+<ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#beneficios">Beneficios</a></li>
+        <li><a href="#oferta">Oferta</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+       <button type="button" class="btn primary" onclick="openWhatsApp('Hola, quiero hacer un pedido en Dulce Detalle.')">
+        <i data-lucide="message-circle"></i> Pedir ahora
+      </button>
+  </nav>
+</header>
+<main>
+ <!-- ================= HERO ================= -->
+    <section id="inicio" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text reveal">
+          <p class="eyebrow">Todo para tu automóvil</p>
+          <h1>Tu auto merece lo mejor</h1>
+          <p class="lead">Encuentra las mejores piezas y refacciones para tu vehículo.</p>
+          <div class="hero-actions">
+            <a href="#productos" class="btn primary">Ver productos</a>
+            <button type="button" class="btn outline" onclick="openWhatsApp('Hola, vi su página y me gustaría conocer sus regalos personalizados.')">Comprar por WhatsApp</button>
+          </div>
+          <p class="trust"><i data-lucide="heart"></i> Más de 200 detalles entregados</p>
+        </div>
+        <div class="hero-image reveal">
+          <img src="img/mec1.jpg" alt="Imagen de la empresa MECANICA">
+          <span class="tag tag-love">De calidad para tus vehículos</span>
+          <span class="tag tag-custom">Pedidos personalizados</span>
+        </div>
+      </div>
+    </section>
+    <!-- ================= PRODUCTOS ================= -->
+    <section id="productos" class="products">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Piezas de calidad</p>
+          <h2>Conoce nuestras piezas de calidad</h2>
+          <p class="lead">Garantizamos la excelencia en cada pieza que ofrecemos.</p>
+        </div>
+        <div class="product-grid">
+          <article class="product-card reveal">
+            <img src="img/mec2.jpg" alt="Caja de regalo rosa con listón y chocolates gourmet.">
+            <div class="product-body">
+              <span class="tag">AUTOPARTE</span>
+              <h3>Caja Abrazo</h3>
+              <p class="price">$500 MXN</p>
+              <p class="description">Filtro de aire.</p>
+              <button type="button" class="btn card" onclick="openModal('modal-caja')">Ver producto</button>
+            </div>
+          </article>
+          <article class="product-card reveal">
+            <img src="img/mec3.jpg" alt="Velas artesanales en frascos de vidrio ámbar.">
+            <div class="product-body">
+              <span class="tag"> AUTOPARTE</span>
+              <h3>Vela Momento</h3>
+              <p class="price">$4,500 MXN</p>
+              <p class="description">Bateria.</p>
+              <button type="button" class="btn card" onclick="openModal('modal-vela')">Ver producto</button>
+            </div>
+          </article>
+          <article class="product-card reveal">
+            <img src="img/mec4.jpg" alt="Taza floral personalizada para regalo.">
+            <div class="product-body">
+              <span class="tag">AUTOPARTE</span>
+              <h3>Taza Personalizada</h3>
+              <p class="price">$3,800 MXN</p>
+              <p class="description">Discos de Freno.</p>
+              <button type="button" class="btn card" onclick="openModal('modal-taza')">Ver producto</button>
+            </div>
+          </article>
+          <article class="product-card reveal">
+            <img src="img/mec5.jpg" alt="Suculentas decorativas envueltas para regalo.">
+            <div class="product-body">
+              <span class="tag">AUTOPARTE</span>
+              <h3>Mini Jardín</h3>
+              <p class="price">$8,000 MXN</p>
+              <p class="description">Rines.</p>
+              <button type="button" class="btn card" onclick="openModal('modal-jardin')">Ver producto</button>
+            </div>
+          </article>
+          <article class="product-card reveal">
+            <img src="img/mec6.jpg" alt="Regalos y postres coloridos para celebración de cumpleaños.">
+            <div class="product-body">
+              <span class="tag">AUTOPARTE</span>
+              <h3>Kit Cumpleaños</h3>
+              <p class="price">$5,000 MXN</p>
+              <p class="description">Volante .</p>
+              <button type="button" class="btn card" onclick="openModal('modal-kit')">Ver producto</button>
+            </div>
+          </article>
+          <article class="product-card reveal">
+            <img src="img/mec7.jpg" alt="Tarjetas elegantes decoradas con flores secas y lavanda.">
+            <div class="product-body">
+              <span class="tag">AUTOPARTE</span>
+              <h3>Tarjeta con Flores</h3>
+              <p class="price">$8,000 MXN</p>
+              <p class="description">Rines.</p>
+              <button type="button" class="btn card" onclick="openModal('modal-tarjeta')">Ver producto</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+<!-- ================= BENEFICIOS ================= -->
+    <section id="beneficios" class="benefits">
+      <div class="container">
+        <div class="section-heading reveal">
+          <h2>¿Por qué comprarnos?</h2>
+        </div>
+        <div class="benefits-grid">
+          <article class="benefit-card reveal">
+            <div class="benefit-icon"><i data-lucide="sparkles"></i></div>
+            <h3>Productos personalizados</h3>
+            <p>Cada detalle puede llevar tu toque especial.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <div class="benefit-icon"><i data-lucide="message-circle-heart"></i></div>
+            <h3>Atención rápida</h3>
+            <p>Te respondemos con cercanía y claridad.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <div class="benefit-icon"><i data-lucide="truck"></i></div>
+            <h3>Envíos</h3>
+            <p>Llevamos tus regalos a donde los necesites.</p>
+          </article>
+          <article class="benefit-card reveal">
+            <div class="benefit-icon"><i data-lucide="mouse-pointer-click"></i></div>
+            <h3>Compra fácil</h3>
+            <p>Elige, escríbenos y listo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- ================= OFERTA ================= -->
+    <section id="oferta" class="offer">
+      <div class="container">
+        <div class="offer-panel reveal">
+          <span class="tag tag-light">Oferta de bienvenida</span>
+          <h2>10% de descuento en tu primera compra</h2>
+          <p>Empieza dandole un detalle a tu carro.</p>
+          <button id="offer-button" type="button" class="btn butter" onclick="revealOffer()">Quiero mi descuento</button>
+          <div id="offer-reveal" class="offer-reveal hidden" aria-live="polite">
+            <p class="offer-reveal-title">¡Listo! Tu código de bienvenida es:</p>
+            <div class="offer-code-row">
+              <span class="offer-code">MECANIC10</span>
+              <button id="copy-code" type="button" class="btn outline" onclick="copyDiscount()">Copiar código</button>
+              <button type="button" class="btn whatsapp" onclick="openWhatsApp('Hola, quiero usar mi código DULCE10 en mi primer pedido.')">Pedir por WhatsApp</button>
+            </div>
+            <p id="copy-feedback" class="copy-feedback hidden" role="status">Código copiado</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ================= TESTIMONIOS ================= -->
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Reseñas de clientes</p>
+          <h2>Lo que dicen nuestros clientes</h2>
+        </div>
+        <div class="testimonial-viewport">
+          <div id="testimonial-track" class="testimonial-track">
+            <article class="testimonial-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-header">
+                  <img class="avatar" src="https://images.pexels.com/photos/8727453/pexels-photo-8727453.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Retrato genérico de una mujer sonriente.">
+                  <div>
+                    <p class="name">Jorge C.</p>
+                    <p class="occasion">Rines para Tacoma</p>
+                  </div>
+                </div>
+                <p class="quote">"Los rines llegaron exelentes bien envueltos."</p>
+                <div class="stars" aria-label="Cinco estrellas">★★★★★</div>
+              </div>
+            </article>
+            <article class="testimonial-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-header">
+                  <img class="avatar" src="https://images.pexels.com/photos/12446392/pexels-photo-12446392.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Retrato genérico de un hombre sonriente.">
+                  <div>
+                    <p class="name">Enrique B.</p>
+                    <p class="occasion">Filtros de aire y Gasolina</p>
+                  </div>
+                </div>
+                <p class="quote">"Exelente servicioencontre todo para mi vehículo."</p>
+                <div class="stars" aria-label="Cinco estrellas">★★★★★</div>
+              </div>
+            </article>
+            <article class="testimonial-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-header">
+                  <img class="avatar" src="https://images.pexels.com/photos/962337/pexels-photo-962337.png?auto=compress&cs=tinysrgb&w=400" alt="Retrato genérico de una mujer joven sonriente.">
+                  <div>
+                    <p class="name">Sergio.</p>
+                    <p class="occasion">Alternador</p>
+                  </div>
+                </div>
+                <p class="quote">"No habia encontrado esta pieza en ningun lado.Gracias ."</p>
+                <div class="stars" aria-label="Cinco estrellas">★★★★★</div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <button id="testimonial-prev" type="button" aria-label="Testimonio anterior"><i data-lucide="arrow-left"></i></button>
+          <div id="testimonial-dots" class="dots" aria-label="Seleccionar testimonio">
+            <button class="active" aria-label="Ver testimonio 1" aria-current="true"></button>
+            <button aria-label="Ver testimonio 2" aria-current="false"></button>
+            <button aria-label="Ver testimonio 3" aria-current="false"></button>
+          </div>
+          <button id="testimonial-next" type="button" aria-label="Siguiente testimonio"><i data-lucide="arrow-right"></i></button>
+        </div>
+      </div>
+    </section>
+    <!-- ================= CONTACTO ================= -->
+    <section id="contacto" class="contact">
+      <div class="container contact-panel reveal">
+        <div class="contact-text">
+          <p class="eyebrow">Estamos cerca</p>
+          <h2>Hablemos de tu próxima pieza </h2>
+          <p class="lead">Cuéntanos qué pieza te hace falta.</p>
+          <button type="button" class="btn primary" onclick="openWhatsApp('Hola, quiero platicar sobre un detalle personalizado.')">Escribir por WhatsApp</button>
+        </div>
+        <aside class="contact-info" aria-label="Datos de contacto">
+          <ul>
+            <li><i data-lucide="instagram"></i> <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">c.chavez017@ebc.edu.mx</a></li>
+            <li><i data-lucide="facebook"></i> <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">MECANICA</a></li>
+            <li><i data-lucide="mail"></i> <a href="mailto:hola@mecanica.mx">hola@mecanica.mx</a></li>
+            <li><i data-lucide="clock-3"></i> Lunes a sábado, 10:00 a 19:00</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+<!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="brand">MECANICA</p>
+      <p class="love">Piezas para tu auto</p>
+      <nav class="footer-links">
+        <a href="#productos">Productos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </footer>
+   <!-- Botón flotante de WhatsApp -->
+  <button id="whatsapp-float" type="button" class="whatsapp-float" aria-label="Escribir por WhatsApp" onclick="openWhatsApp('Hola, quiero conocer los detalles personalizados de Dulce Detalle.')">
+    <i data-lucide="message-circle"></i>
+  </button>
+  <!-- ================= MODALES DE PRODUCTO ================= -->
+  <div id="modal-caja" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-caja-title">
+    <div class="modal-panel">
+      <div class="modal-image">
+        <img src="img/mec2.jpg" alt="Filtro de aire.">
+        <button type="button" class="modal-close" aria-label="Cerrar producto" onclick="closeModal('modal-caja')"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body">
+        <h2 id="modal-caja-title">Filtro de aire</h2>
+        <p class="price">$500 MXN</p>
+        <p>Un filtro de aire de alta calidad para mantener tu vehículo en perfecto estado.</p>
+        <h3>Características:</h3>
+        <ul>
+          <li>Filtro de aire de alta calidad</li>
+          <li>Resistente al desgaste</li>
+          <li>Fácil de reemplazar</li>
+        </ul>
+        <button type="button" class="btn primary" onclick="openWhatsApp('Hola, quiero pedir la Caja Abrazo. ¿Me ayudan a personalizarla?')">Pedir por WhatsApp</button>
+      </div>
+    </div>
+  </div>
+  <div id="modal-vela" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-vela-title">
+    <div class="modal-panel">
+      <div class="modal-image">
+        <img src="img/mec3.jpg" alt="Bateria.">
+        <button type="button" class="modal-close" aria-label="Cerrar producto" onclick="closeModal('modal-vela')"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body">
+        <h2 id="modal-vela-title">Bateria</h2>
+        <p class="price">$4500 MXN</p>
+        <p>Una bateria de alta calidad para mantener tu vehículo en perfecto estado.</p>
+        <h3>Características:</h3>
+        <ul>
+          <li>Bateria de alta calidad</li>
+          <li>Resistente al desgaste</li>
+          <li>Fácil de reemplazar</li>
+        </ul>
+        <button type="button" class="btn primary" onclick="openWhatsApp('Hola, quiero pedir la Bateria. ¿Me ayudan a personalizarla?')">Pedir por WhatsApp</button>
+      </div>
+    </div>
+  </div>
+  <div id="modal-taza" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-taza-title">
+    <div class="modal-panel">
+      <div class="modal-image">
+        <img src="img/mec4.jpg" alt="Discos de freno.">
+          <li>Discos de freno de alta calidad</li>
+          <li>Resistente al desgaste</li>
+          <li>Fácil de reemplazar</li>
+        </ul>
+        <button type="button" class="btn primary" onclick="openWhatsApp('Hola, quiero pedir la Vela Momento. ¿Qué aromas tienen disponibles?')">Pedir por WhatsApp</button>
+      </div>
+    </div>
+  </div>
+  <div id="modal-taza" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-taza-title">
+    <div class="modal-panel">
+      <div class="modal-image">
+        <img src="img/mec5.jpg" alt="Volanbte.">
+        <button type="button" class="modal-close" aria-label="Cerrar producto" onclick="closeModal('modal-taza')"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body">
+        <h2 id="modal-taza-title">Volante</h2>
+        <p class="price">$5000 MXN</p>
+        <p>Un volante de alta calidad para mejorar la experiencia de conducción.</p>
+        <h3>Características:</h3>
+        <ul>
+          <li>Volante de alta calidad</li>
+          <li>Resistente al desgaste</li>
+          <li>Fácil de reemplazar</li>
+        </ul>
+        <button type="button" class="btn primary" onclick="openWhatsApp('Hola, quiero pedir una Taza Personalizada. Tengo una frase en mente.')">Pedir por WhatsApp</button>
+      </div>
+    </div>
+  </div>
+  <div id="modal-jardin" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-jardin-title">
+    <div class="modal-panel">
+      <div class="modal-image">
+        <img src="img/mec5.jpg" alt="RINES">
+        <button type="button" class="modal-close" aria-label="Cerrar producto" onclick="closeModal('modal-jardin')"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body">
+        <h2 id="modal-jardin-title">RINES</h2>
+        <p class="price">$8000 MXN</p>
+        <p>Para culquier tipo de vehículo.</p>
+        <h3>Características:</h3>
+        <ul>
+          <li>Rines de alta calidad</li>
+          <li>Resistente al desgaste</li>
+          <li>Fácil de reemplazar</li>
+        </ul>
+        <button type="button" class="btn primary" onclick="openWhatsApp('Hola, quiero pedir un Mini Jardín. ¿Qué opciones de maceta tienen?')">Pedir por WhatsApp</button>
+      </div>
+    </div>
+  </div>
+  <div id="modal-kit" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-kit-title">
+    <div class="modal-panel">
+      <div class="modal-image">
+        <img src="https://images.pexels.com/photos/7487417/pexels-photo-7487417.jpeg?auto=compress&cs=tinysrgb&w=1280" alt="Regalos coloridos y postres para celebrar un cumpleaños.">
+        <button type="button" class="modal-close" aria-label="Cerrar producto" onclick="closeModal('modal-kit')"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body">
+        <h2 id="modal-kit-title">Kit Cumpleaños</h2>
+        <p class="price">$429 MXN</p>
+        <p>Una celebración lista para sorprender, con dulzura, color y pequeños elementos que se sienten personales.</p>
+        <h3>Personalízalo con:</h3>
+        <ul>
+          <li>Mensaje de cumpleaños</li>
+          <li>Paleta de colores</li>
+          <li>Selección de dulces</li>
+        </ul>
+        <button type="button" class="btn primary" onclick="openWhatsApp('Hola, quiero pedir un Kit Cumpleaños. ¿Me comparten opciones?')">Pedir por WhatsApp</button>
+      </div>
+    </div>
+  </div>
+  <div id="modal-tarjeta" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-tarjeta-title">
+    <div class="modal-panel">
+      <div class="modal-image">
+        <img src="https://images.pexels.com/photos/32589610/pexels-photo-32589610.jpeg?auto=compress&cs=tinysrgb&w=1280" alt="Tarjetas artesanales con flores secas y lavanda.">
+        <button type="button" class="modal-close" aria-label="Cerrar producto" onclick="closeModal('modal-tarjeta')"><i data-lucide="x"></i></button>
+      </div>
+      <div class="modal-body">
+        <h2 id="modal-tarjeta-title">Tarjeta con Flores</h2>
+        <p class="price">$159 MXN</p>
+        <p>Un mensaje escrito con intención, acompañado por flores secas que conservan el encanto de ese momento.</p>
+        <h3>Personalízala con:</h3>
+        <ul>
+          <li>Mensaje escrito a mano</li>
+          <li>Flores a elección</li>
+          <li>Color de tarjeta</li>
+        </ul>
+        <button type="button" class="btn primary" onclick="openWhatsApp('Hola, quiero pedir una Tarjeta con Flores. ¿Puedo incluir un mensaje?')">Pedir por WhatsApp</button>
+      </div>
+    </div>
+  </div>
+
+</main>
+<script src="script.js"></script>
+</body>
+</html>
